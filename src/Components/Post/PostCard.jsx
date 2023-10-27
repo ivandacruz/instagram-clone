@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { BsBookFill, BsBookmark, BsBookmarkFill, BsEmojiSmile, BsThreeDots } from "react-icons/bs";
+import { BsBookmark, BsBookmarkFill, BsEmojiSmile, BsThreeDots } from "react-icons/bs";
 import { FaRegComment } from "react-icons/fa"
 import { RiSendPlaneLine } from "react-icons/ri"
 import "./PostCard.css";
@@ -25,7 +25,7 @@ const PostCard = () => {
 
     return (
         <div>
-            <div className='w-full border rounded-md w-full'>
+            <div className='w-full border rounded-md '>
                 {/* cabeçalho do post */}
                 <div className='flex items-center justify-between w-full px-5 py-4'>
                     <div className='flex items-center'>
