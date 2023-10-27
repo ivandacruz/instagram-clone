@@ -138,6 +138,33 @@ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 <hr>
 
 
+# images 
+
+[Pixabay](https://pixabay.com/pt/)
+
+Imgs:
+    https://cdn.pixabay.com/photo/2023/10/16/16/07/eagle-8319555_640.jpg
+
+    https://cdn.pixabay.com/photo/2023/10/12/12/54/woman-8310746_640.jpg
+
+
+[Pexels](https://www.pexels.com/pt-br/)
+
+Imgs:
+    https://images.pexels.com/photos/7311920/pexels-photo-7311920.jpeg
+
+    https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg
+
+[FreeImages](https://www.freeimages.com/pt/)
+Imgs:
+    https://images.freeimages.com/images/large-previews/499/light-of-technology-02-1535941.jpg
+
+    https://images.freeimages.com/images/large-previews/1a8/nature-9-1469815.jpg
+
+<hr>
+
+
+
 # Tutorials 
 
 Canal:
@@ -167,7 +194,7 @@ Finalizado
 
 Progress video 2º parte:
 
-| 00:55:00 | de: | 1:46:45 |
+| 00:58:00 | de: | 1:46:45 |
 |----------|-----|---------|
 
 até aqui [ ok ]
