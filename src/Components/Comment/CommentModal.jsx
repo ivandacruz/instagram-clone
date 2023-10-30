@@ -12,14 +12,14 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { RiSendPlaneLine } from "react-icons/ri";
 
-const CommentModal = (
+const CommentModal = ({
   onClose,
   isOpen,
   isPostLiked,
   handlePostLike,
   isSaved,
   handleSavePost
-) => {
+}) => {
   return (
     <div>
       <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
@@ -63,7 +63,8 @@ const CommentModal = (
                 </div>
 
                 {/*  */}
-                <div className="absolute bottom-0">
+                <div className="absolute bottom-0 w-[50%]">
+                {/* <div className="absolute bottom-0 "> */}
                   <div className="flex items-center justify-between w-full py-4">
                     <div className="flex items-center space-x-2">
                       {
@@ -104,16 +105,19 @@ const CommentModal = (
                     <p className="opacity-50 text-sm">1 day ago</p>
                   </div>
 
-                  <div className="border border-t w-full">
-                    <div className="flex w-full items-center px-5">
+                  {/* <div className="border border-t w-full"> */}
+                    {/* <div className="flex w-full items-center px-5"> */}
+                    <div className="flex w-full items-center ">
                       <BsEmojiSmile />
                       <input
-                        className="commentInput"
+                        className=" commentInput"
                         type="text"
                         placeholder="Add a comment..."
                       />
                     </div>
-                  </div>
+                  {/* </div> */}
+
+
                 </div>
               </div>
             </div>
