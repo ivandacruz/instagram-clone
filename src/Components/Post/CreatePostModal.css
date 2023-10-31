@@ -29,5 +29,8 @@
 input[type="file"]{
     display: none;
 }
+.fileInput {
+    display: none;
+}
 
 

@@ -1,3 +1,4 @@
+import "./CreatePostModal.css";
 import {
   Button,
   Modal,
@@ -8,43 +9,44 @@ import {
 import React, { useState } from "react";
 import { FaPhotoVideo } from "react-icons/fa";
 
-const CreatePostModal = ({ 
-    onClose, isOpen 
-}) => {
-    const [isDragOver, setIsDragOver] = useState(false);
-    const [file, setFile] = useState();
+const CreatePostModal = ({ onClose, isOpen }) => {
+  const [isDragOver, setIsDragOver] = useState(false);
+  const [file, setFile] = useState();
 
-    const handleDrop = (event) => {
-        event.preventDefault()
-        const droppedFile = event.dataTransfer.file[0];
-        if(droppedFile.type.startsWith("image/") || droppedFile.type.startsWith("video/")){
-            setFile(droppedFile)
-        }
-    } 
-
-    
-
-    const handleDragOver=(event)=>{
-        event.preventDefault();
-        event.dataTransfer.dropEffect = "copy";
-        setIsDragOver(true)
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const droppedFile = event.dataTransfer.file[0];
+    if (
+      droppedFile.type.startsWith("image/") ||
+      droppedFile.type.startsWith("video/")
+    ) {
+      setFile(droppedFile);
     }
+  };
 
-    const handleDragLeave = () => {
-        setIsDragOver(false)
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "copy";
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
+  };
+
+  const handleOnChange = (e) => {
+    const file = e.target.files[0];
+    if (
+      file &&
+      (file.type.startsWith("image/") || file.type.startsWith("video/"))
+    ) {
+      setFile(file);
+      console.log("file :",file);
+    } else {
+      setFile(null);
+      alert("please select an image or video");
     }
-
-    const handleOnChange = (e) => {
-        const file = e.target.file[0];
-        if(file&& file.type.startsWith("image/") || file.type.startsWith("video/")){
-            setFile(file);
-        }
-        else {
-            setFile(null);
-            alert("please select an image or video")
-        }
-    }
-
+  };
 
   return (
     <div>
@@ -53,27 +55,54 @@ const CreatePostModal = ({
         <ModalContent>
           <div className="flex justify-between py-1 px-10 items-center">
             <p>Create New Post</p>
-            <Button variant={"ghost"} size="sm" colorSchema={"blue"}>
+            <Button className="" variant={"ghost"} size="sm" colorSchema={"blue"}>
               Share
             </Button>
           </div>
           <hr />
           <ModalBody>
-            <div>
-              <div>
-                <div
+            <div className="h-[70vh] justify-between pb-5 flex">
+              <div className="w-[50%]">
+                {!file && 
+                  <div
                     onDrop={handleDrop}
                     onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave} 
+                    onDragLeave={handleDragLeave}
                     className="drag-drop h-full"
-                >
+                  >
                     <div>
-                        <FaPhotoVideo className="text-3xl"/>
-                        <p>Drag Photos or videos here</p>
+                      <FaPhotoVideo className="text-3xl" />
+                      <p>Drag Photos or videos here</p>
                     </div>
-                    <label htmlFor="file-upload" className="custom-file-upload">Select From Computer</label>
+                    <label htmlFor="file-upload" className="custom-file-upload">
+                      Select From Computer
+                    </label>
 
-                    <input type="text" id="file-upload" accept="image/*, video/*" onChange={handleOnChange} />
+                    <input
+                      className="fileInput"
+                      type="file"
+                      id="file-upload"
+                      accept="image/*, video/*"
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                }
+
+                {file && 
+                  <img
+                    // className="max-h-[100%] max-w-[250%] items-center"
+                    className="max-h-full"
+                    src={URL.createObjectURL(file)}
+                    alt=""
+                  />
+                }
+              </div>
+              {/* faixa de separação */}
+              <div className="w-[1px] border-2 h-full"></div>
+              <div className="w-[50%]">
+                <div className="flex items-center px-2">
+                  <img className="w-7 h-7 rounded-full" src="https://images.pexels.com/photos/18739537/pexels-photo-18739537/free-photo-of-retrato-posando-bonita-elegante.jpeg" alt="" />
+                  <p className="font-semibold ml-4">username</p>
                 </div>
               </div>
             </div>
