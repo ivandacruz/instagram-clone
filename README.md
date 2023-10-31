@@ -141,6 +141,18 @@ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 
 <hr>
 
+## Styled Components
+
+[Styled Components](https://styled-components.com/docs/basics#installation)
+
+```sh
+
+npm install styled-components
+
+```
+
+<hr>
+
 
 # images 
 
@@ -175,53 +187,3 @@ Imgs:
 
 <hr>
 
-
-
-# Tutorials 
-
-Canal:
-    [Code With Zosh](https://www.youtube.com/@codwithzosh)
-
-
-# Videos Seguidos
-
-## Video Tutorial 1º parte:
-
-[Create Instagram Clone ](https://www.youtube.com/watch?v=--QxzepM7Kw&list=PL7Oro2kvkIzJpEjx7PCaVBdZfxmZEbxy6)
-
-[ C ]  - Create Instagram Clone With Spring Boot, MySQL and React | Java Full Stack Project Tutorial Part 1
-
-Progress video 1º parte:
-
-| 01:41:58 | de: | 01:41:58 |  
-|-------|-----|---------|
-
-Finalizado
-
-<hr>
-
-## Video Tutorial 2º parte:
-
-[ Create Instagram Clone ](https://www.youtube.com/watch?v=1XCKebcfoDo&list=PL7Oro2kvkIzJpEjx7PCaVBdZfxmZEbxy6&index=2)
-
-Progress video 2º parte:
-
-| 01:46:45 | de: | 1:46:45 |
-|----------|-----|---------|
-
-Finalizado
-
-<hr>
-
-## Video Tutorial 3º parte:
-
-[ Create Instagram Clone ](https://www.youtube.com/watch?v=fBlZki5K7YM&list=PL7Oro2kvkIzJpEjx7PCaVBdZfxmZEbxy6&index=3)
-
-Progress video 3º parte:
-
-| 00:39:00 | de: | 2:12:45 |
-|----------|-----|---------|
-
-até aqui [ ok ]
-
-<hr>

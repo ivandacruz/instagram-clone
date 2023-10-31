@@ -8,10 +8,14 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaPhotoVideo } from "react-icons/fa";
+import { GrEmoji } from "react-icons/gr";
+import { GoLocation } from "react-icons/go";
+
 
 const CreatePostModal = ({ onClose, isOpen }) => {
   const [isDragOver, setIsDragOver] = useState(false);
   const [file, setFile] = useState();
+  const [caption, setCaption] = useState();
 
   const handleDrop = (event) => {
     event.preventDefault();
@@ -41,21 +45,29 @@ const CreatePostModal = ({ onClose, isOpen }) => {
       (file.type.startsWith("image/") || file.type.startsWith("video/"))
     ) {
       setFile(file);
-      console.log("file :",file);
+      console.log("file :", file);
     } else {
       setFile(null);
       alert("please select an image or video");
     }
   };
+  const handleCaptionChange = (e) => {
+    setCaption(e.target.value)
+  }
 
   return (
     <div>
-      <Modal size={"4xl"} onClose={onClose} isOpen={true} isCentered>
+      <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <div className="flex justify-between py-1 px-10 items-center">
             <p>Create New Post</p>
-            <Button className="" variant={"ghost"} size="sm" colorSchema={"blue"}>
+            <Button
+              className=""
+              variant={"ghost"}
+              size="sm"
+              colorSchema={"blue"}
+            >
               Share
             </Button>
           </div>
@@ -63,7 +75,7 @@ const CreatePostModal = ({ onClose, isOpen }) => {
           <ModalBody>
             <div className="h-[70vh] justify-between pb-5 flex">
               <div className="w-[50%]">
-                {!file && 
+                {!file && (
                   <div
                     onDrop={handleDrop}
                     onDragOver={handleDragOver}
@@ -86,24 +98,49 @@ const CreatePostModal = ({ onClose, isOpen }) => {
                       onChange={handleOnChange}
                     />
                   </div>
-                }
+                )}
 
-                {file && 
+                {file && (
                   <img
                     // className="max-h-[100%] max-w-[250%] items-center"
-                    className="max-h-full"
+                    className="object-cover h-full w-full"
+                    // className="max-h-full"
                     src={URL.createObjectURL(file)}
                     alt=""
                   />
-                }
+                )}
               </div>
               {/* faixa de separação */}
               <div className="w-[1px] border-2 h-full"></div>
               <div className="w-[50%]">
                 <div className="flex items-center px-2">
-                  <img className="w-7 h-7 rounded-full" src="https://images.pexels.com/photos/18739537/pexels-photo-18739537/free-photo-of-retrato-posando-bonita-elegante.jpeg" alt="" />
+                  <img
+                    className="w-7 h-7 rounded-full"
+                    src="https://images.pexels.com/photos/18739537/pexels-photo-18739537/free-photo-of-retrato-posando-bonita-elegante.jpeg"
+                    alt=""
+                  />
                   <p className="font-semibold ml-4">username</p>
                 </div>
+                <div className="px-2">
+                  <textarea
+                    placeholder="Write a caption"
+                    name="caption"
+                    className="captionInput"
+                    rows="8"
+                    onChange={handleCaptionChange}
+                  ></textarea>
+                </div>
+                <div className="flex justify-between px-2">
+                  <GrEmoji/>
+                  <p className="opacity-70">{caption?.length} /2,200</p>
+                </div>
+                <hr />
+
+                <div className="p-2 flex justify-between items-center">
+                  <input className="locationInput" type="text" placeholder="location" name="location" />
+                  <GoLocation />
+                </div>
+                <hr />
               </div>
             </div>
           </ModalBody>
