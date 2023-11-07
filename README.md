@@ -1,9 +1,7 @@
-# by El monster
+# Instagram-clone
 
-#
 
-# instagram-clone
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -72,12 +70,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: 
+	[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+<hr />
 
 #
 
-Installs components
+# Installs components
 
 ## React Redux
 
@@ -112,7 +112,7 @@ install:
 
 ```sh
 
-
+npm i yup
 
 ```
 
@@ -122,7 +122,10 @@ install:
 
 ```sh
 
+npm install -D tailwindcss
 
+
+npx tailwindcss init
 
 ```
 
@@ -186,3 +189,19 @@ Imgs:
     https://images.freeimages.com/images/large-previews/1a8/nature-9-1469815.jpg
 
 <hr>
+
+# Cloning a repository: 
+
+Follow step
+    [step by step](https://docs.github.com/en/github-ae@latest/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+
+## Install npm packages
+
+```sh
+
+npm i
+
+```
+
+#
